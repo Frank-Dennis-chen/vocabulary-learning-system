@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>背單字系統英打</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英文單字學習系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>英文單字學習系統</h1>
+
+    <!-- 模式選擇 -->
+    <div class="mode-selector">
+      <button id="teacherModeBtn">老師模式</button>
+      <button id="studentModeBtn">學生模式</button>
+    </div>
+
+    <!-- 老師模式 -->
+    <div id="teacherPanel" class="panel active">
+      <h2>老師模式</h2>
+
+      <div class="vocabulary-input">
+        <h3>批量添加單字</h3>
+        <div>
+          <label for="batchWords">輸入格式: 英文=中文 (每行一組)</label>
+          <textarea id="batchWords" rows="10" placeholder="apple=蘋果
+book=書
+computer=電腦"></textarea>
+        </div>
+        <button id="addBatchBtn">批量添加</button>
+      </div>
+
+      <div class="vocabulary-list">
+        <h3>單字列表</h3>
+        <table id="wordTable">
+          <thead>
+            <tr>
+              <th>英文</th>
+              <th>中文</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="wordTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="student-mistakes">
+        <h3>學生錯題統計</h3>
+        <div id="mistakesContainer"></div>
+      </div>
+    </div>
+
+    <!-- 學生模式 -->
+    <div id="studentPanel" class="panel hidden">
+      <h2>學生模式</h2>
+
+      <div id="studentLogin">
+        <h3>登入</h3>
+        <div>
+          <label for="studentName">姓名:</label>
+          <input type="text" id="studentName" placeholder="輸入您的姓名">
+        </div>
+        <button id="loginBtn">登入</button>
+      </div>
+
+      <div id="studentQuiz" class="hidden">
+        <h3>測驗模式選擇</h3>
+        <div class="quiz-mode">
+          <label>
+            <input type="radio" name="quizMode" value="chiToEng" checked>
+            中翻英
+          </label>
+          <label>
+            <input type="radio" name="quizMode" value="engToChi">
+            英翻中
+          </label>
+        </div>
+        <button id="startQuizBtn">開始測驗</button>
+
+        <div id="quizContainer" class="hidden">
+          <div id="quizProgress"></div>
+          <div id="quizQuestion"></div>
+          <input type="text" id="quizAnswer" placeholder="輸入答案">
+          <button id="submitAnswerBtn">提交</button>
+          <div id="quizFeedback"></div>
+        </div>
+
+        <div id="quizResult" class="hidden">
+          <h3>測驗結果</h3>
+          <div id="resultMessage"></div>
+          <button id="restartQuizBtn">重新測驗</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
